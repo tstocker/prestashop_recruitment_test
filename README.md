@@ -1,4 +1,4 @@
-# Proestashop ex
+# Prestashop exercice
 
 ## Mise en place :
 
@@ -9,6 +9,8 @@ yarn global add @quasar/cli
 ## or install with NPM
 
 npm install -g @quasar/cli
+
+## Exercice :
 
 1. Créer un magasin, module, Vuex avec le namespace "tasks" pour les plats
    dans src/store/ et y ajouter le tableau des dishes.
