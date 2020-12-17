@@ -1,7 +1,7 @@
 <template>
   <q-page class="q-pa-lg">
     <div class="row q-gutter-lg">
-      <dishe v-for="dishe in dishes" :key="dishe.id" :plat="dishe" />
+      <dishe v-for="dishe in dishes" :key="dishe.id" :dishe="dishe" />
 
       <add-button @click="showFormDishe = true" />
 
