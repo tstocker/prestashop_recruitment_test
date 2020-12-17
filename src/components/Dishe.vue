@@ -1,14 +1,14 @@
 <template>
   <q-card class="card">
-    <q-img :src="plat.image" basic contain>
+    <q-img :src="dishe.image" basic contain>
       <div class="absolute-bottom text-h6">
-        {{ plat.nom }}
+        {{ dishe.name }}
       </div>
     </q-img>
 
     <q-card-section>
       <q-rating
-        :value="plat.note"
+        :value="dishe.note"
         size="2em"
         color="orange"
         readonly
@@ -17,17 +17,17 @@
     </q-card-section>
 
     <q-card-section>
-      {{ plat.description }}
+      {{ dishe.description }}
     </q-card-section>
 
     <q-card-actions class="absolute-bottom" align="right">
-      <q-btn @click="afficherFormPlat = true" icon="edit" color="blue" flat
+      <q-btn @click="showFormDishe = true" icon="edit" color="blue" flat
         >Modifier</q-btn
       >
       <q-btn icon="delete" color="red" flat>Supprimer</q-btn>
     </q-card-actions>
 
-    <q-dialog v-model="afficherFormPlat">
+    <q-dialog v-model="showFormDishe">
       <form-dishe action="modifier" />
     </q-dialog>
   </q-card>
@@ -35,10 +35,10 @@
 
 <script>
 export default {
-  props: ["plat"],
+  props: ["dishe"],
   data() {
     return {
-      afficherFormPlat: false
+      showFormDishe: false
     };
   },
   components: {

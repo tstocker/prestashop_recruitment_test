@@ -1,8 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-// Importation du module Vuex de la solution sous le namespace solutionPlats
-
 // Importer votre module ici et l'ajouter au Store (ligne 19)
 
 Vue.use(Vuex);

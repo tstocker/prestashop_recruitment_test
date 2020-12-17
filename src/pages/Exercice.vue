@@ -1,12 +1,12 @@
 <template>
   <q-page class="q-pa-lg">
     <div class="row q-gutter-lg">
-      <dishe v-for="plat in plats" :key="plat.id" :plat="plat" />
+      <dishe v-for="dishe in dishes" :key="dishe.id" :plat="dishe" />
 
-      <add-button @click="afficherFormPlat = true" />
+      <add-button @click="showFormDishe = true" />
 
-      <q-dialog v-model="afficherFormPlat">
-        <form-dishe action="ajouter" />
+      <q-dialog v-model="showFormDishe">
+        <form-dishe action="add" />
       </q-dialog>
     </div>
   </q-page>
@@ -16,7 +16,7 @@
 export default {
   data() {
     return {
-      plats: [
+      dishes: [
         {
           id: 1,
           image: "https://i.imgur.com/0umadnY.jpg",
@@ -50,7 +50,7 @@ export default {
           note: 5
         }
       ],
-      afficherFormPlat: false
+      showFormDishe: false
     };
   },
   components: {
