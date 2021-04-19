@@ -36,4 +36,4 @@ npm install -g @quasar/cli
 
 9. Lié le store au localStorage (add, update, delete)
 
-10. Optionnal : Ajouter une fonctionnalité “Pull to refresh”
+10. Optionnal : Ajouter une fonctionnalité “Pull to refresh” (simuler l'ajout et la mise à jour de repas avec un pull to refresh)
