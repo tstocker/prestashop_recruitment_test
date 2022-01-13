@@ -12,6 +12,8 @@ npm install -g @quasar/cli
 
 ## Exercice :
 
+# N'hésitez pas à refondre et changer tout ce qui vous semble mauvais !!!
+
 1. Créer un magasin, module, Vuex avec le namespace "tasks" pour les plats
    dans src/store/ et y ajouter le tableau des dishes.
 
@@ -37,3 +39,5 @@ npm install -g @quasar/cli
 9. Lié le store au localStorage (add, update, delete)
 
 10. Optionnal : Ajouter une fonctionnalité “Pull to refresh” (simuler l'ajout et la mise à jour de repas avec un pull to refresh)
+
+11. Optionnal : Refondre en composition-api
