@@ -40,4 +40,4 @@ npm install -g @quasar/cli
 
 10. Optionnal : Ajouter une fonctionnalité “Pull to refresh” (simuler l'ajout et la mise à jour de repas avec un pull to refresh)
 
-11. Optionnal : Refondre en composition-api
+11. Optionnal : Refondre en composition-api & typescript
