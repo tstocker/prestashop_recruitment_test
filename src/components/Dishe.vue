@@ -1,8 +1,13 @@
 <template>
   <q-card class="card">
-    <q-img :src="dishe.image" basic contain>
+    <q-img v-if="dishe.image.length" :src="dishe.image" basic contain>
       <div class="absolute-bottom text-h6">
-        {{ dishe.name }}
+        {{ dishe.nom }}
+      </div>
+    </q-img>
+    <q-img v-else src="statics/image-placeholder.png" basic contain>
+      <div class="absolute-bottom text-h6">
+        {{ dishe.nom }}
       </div>
     </q-img>
 
@@ -16,19 +21,24 @@
       />
     </q-card-section>
 
-    <q-card-section>
+    <q-card-section v-if="dishe.description.length">
       {{ dishe.description }}
+    </q-card-section>
+    <q-card-section v-else class="text-italic">
+      Aucune description fournie
     </q-card-section>
 
     <q-card-actions class="absolute-bottom" align="right">
-      <q-btn @click="showFormDishe = true" icon="edit" color="blue" flat
-        >Modifier</q-btn
-      >
-      <q-btn icon="delete" color="red" flat>Supprimer</q-btn>
+      <q-btn @click="showFormDishe = true" icon="edit" color="blue" flat>Modifier</q-btn>
+      <q-btn @click="showDeleteDishe = true" icon="delete" color="red" flat>Supprimer</q-btn>
     </q-card-actions>
 
+    <q-dialog v-model="showDeleteDishe">
+      <delete-dishe v-bind:disheId="dishe.id" />
+    </q-dialog>
+
     <q-dialog v-model="showFormDishe">
-      <form-dishe action="modifier" />
+      <form-dishe v-bind:onClose="onClose" v-bind:editedDishe="dishe" action="Modifier" />
     </q-dialog>
   </q-card>
 </template>
@@ -38,11 +48,16 @@ export default {
   props: ["dishe"],
   data() {
     return {
-      showFormDishe: false
+      showFormDishe: false,
+      showDeleteDishe: false
     };
   },
+  methods: {
+    onClose() { this.showFormDishe = false; }
+  },
   components: {
-    "form-dishe": require("components/FormDishe.vue").default
+    "form-dishe": require("components/FormDishe.vue").default,
+    "delete-dishe": require("components/DeleteDishe.vue").default
   }
 };
 </script>
